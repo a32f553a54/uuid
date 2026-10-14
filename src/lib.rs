@@ -1008,7 +1008,7 @@ mod tests {
 
     use crate::std::string::{String, ToString};
 
-    #[cfg(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")))]
+    #[cfg(all(target_family = "wasm", any(target_os = "unknown", target_os = "none")))]
     use wasm_bindgen_test::*;
 
     macro_rules! check {
@@ -1092,7 +1092,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     #[cfg(feature = "std")]
@@ -1122,7 +1122,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_default() {
@@ -1134,7 +1134,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_display() {
@@ -1154,7 +1154,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_to_simple_string() {
@@ -1170,7 +1170,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_hyphenated_string() {
@@ -1186,7 +1186,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_upper_lower_hex() {
@@ -1243,7 +1243,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_to_urn_string() {
@@ -1261,7 +1261,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_nil() {
@@ -1286,7 +1286,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_max() {
@@ -1311,7 +1311,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_predefined_namespaces() {
@@ -1335,7 +1335,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_get_timestamp_unsupported_version() {
@@ -1357,7 +1357,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_get_node_id_unsupported_version() {
@@ -1377,7 +1377,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_get_version() {
@@ -1408,7 +1408,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_get_version_non_conforming() {
@@ -1423,7 +1423,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_get_variant() {
@@ -1451,7 +1451,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_from_fields() {
@@ -1469,7 +1469,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_from_fields_le() {
@@ -1487,7 +1487,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_fields_roundtrip() {
@@ -1507,7 +1507,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_fields_le_roundtrip() {
@@ -1527,7 +1527,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_fields_le_are_actually_le() {
@@ -1547,7 +1547,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_u128_roundtrip() {
@@ -1561,7 +1561,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_u128_le_roundtrip() {
@@ -1575,7 +1575,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_u128_le_is_actually_le() {
@@ -1589,7 +1589,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_u64_pair_roundtrip() {
@@ -1605,7 +1605,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_from_slice() {
@@ -1622,7 +1622,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_from_bytes() {
@@ -1639,7 +1639,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_as_bytes() {
@@ -1657,7 +1657,7 @@ mod tests {
     #[test]
     #[cfg(feature = "std")]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_convert_vec() {
@@ -1676,7 +1676,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_bytes_roundtrip() {
@@ -1694,7 +1694,7 @@ mod tests {
 
     #[test]
     #[cfg_attr(
-        all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")),
+        all(target_family = "wasm", any(target_os = "unknown", target_os = "none")),
         wasm_bindgen_test
     )]
     fn test_bytes_le_roundtrip() {

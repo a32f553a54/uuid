@@ -1,5 +1,5 @@
 #[test]
-#[cfg(all(not(miri), not(target_arch = "wasm32")))]
+#[cfg(all(not(miri), not(target_family = "wasm")))]
 fn ui() {
     let t = trybuild::TestCases::new();
 

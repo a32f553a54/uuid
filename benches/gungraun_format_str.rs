@@ -1,6 +1,6 @@
 // Gungraun benchmarks require the `gungraun-runner` binary and Valgrind, which
-// aren't available on wasm32 targets, so the harness is compiled out there.
-#[cfg(not(target_arch = "wasm32"))]
+// aren't available on wasm targets, so the harness is compiled out there.
+#[cfg(not(target_family = "wasm"))]
 mod bench {
     use std::hint::black_box;
     use std::io::Write;
@@ -73,11 +73,11 @@ mod bench {
     );
 }
 
-#[cfg(not(target_arch = "wasm32"))]
+#[cfg(not(target_family = "wasm"))]
 use bench::format_str;
 
-#[cfg(not(target_arch = "wasm32"))]
+#[cfg(not(target_family = "wasm"))]
 gungraun::main!(library_benchmark_groups = format_str);
 
-#[cfg(target_arch = "wasm32")]
+#[cfg(target_family = "wasm")]
 fn main() {}

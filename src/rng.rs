@@ -18,10 +18,10 @@ pub(crate) fn u16() -> u16 {
     imp::RngImp::u16()
 }
 
-#[cfg(not(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none"))))]
+#[cfg(not(all(target_family = "wasm", any(target_os = "unknown", target_os = "none"))))]
 mod imp {
     /*
-    Random support for non `wasm32-unknown-unknown` platforms.
+    Random support for non `wasm32/64-unknown-unknown` platforms.
     */
 
     use super::*;
@@ -86,10 +86,10 @@ mod imp {
     }
 }
 
-#[cfg(all(target_arch = "wasm32", any(target_os = "unknown", target_os = "none")))]
+#[cfg(all(target_family = "wasm", any(target_os = "unknown", target_os = "none")))]
 mod imp {
     /*
-    Random support for `wasm32-unknown-unknown`.
+    Random support for `wasm32/64-unknown-unknown`.
     */
 
     #![allow(dead_code, unused_imports)] // Keeps our cfg's from becoming too convoluted in here
@@ -101,7 +101,7 @@ mod imp {
         not(feature = "rng-getrandom"),
         not(feature = "rng-rand")
     ))]
-    compile_error!("to use `uuid` on `wasm32-unknown-unknown`, specify a source of randomness using one of the `js`, `rng-getrandom`, or `rng-rand` features");
+    compile_error!("to use `uuid` on `wasm32/64-unknown-unknown`, specify a source of randomness using one of the `js`, `rng-getrandom`, or `rng-rand` features");
 
     // Using `rand`
     #[cfg(feature = "rng-rand")]
@@ -211,7 +211,7 @@ mod imp {
     mod webcrypto {
         /*
         This module preserves the stabilized behavior of `uuid` that requires the
-        `js` feature to enable rng on `wasm32-unknown-unknown`, which it inherited
+        `js` feature to enable rng on `wasm32/64-unknown-unknown`, which it inherited
         from `getrandom` `0.2`.
 
         Vendored from `getrandom`: https://github.com/rust-random/getrandom/blob/ce3b017fdee0233c6ecd61e68b96a84bf6f911bf/src/backends/wasm_js.rs
